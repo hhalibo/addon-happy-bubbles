@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
 # ==============================================================================
 # Home Assistant Community Add-on: Happy Bubbles
 # Configures NGINX
@@ -7,6 +8,7 @@ declare port
 declare certfile
 declare dns_host
 declare ingress_interface
+declare ingress_entry
 declare ingress_port
 declare keyfile
 
@@ -25,6 +27,8 @@ if bashio::var.has_value "${port}"; then
     else
         mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
     fi
+    ingress_entry=$(bashio::addon.ingress_entry)
+    sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
 fi
 
 ingress_port=$(bashio::addon.ingress_port)
