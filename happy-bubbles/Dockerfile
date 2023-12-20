@@ -20,8 +20,8 @@ RUN \
     \
     && wget "https://github.com/happy-bubbles/presence/releases/download/1.8.3/presence_linux_arm.zip" \
     && unzip -d /opt "presence_linux_arm.zip" \
-    && rm "presence_linux_arm.zip" \
-    \
+    && rm "presence_linux_arm.zip" 
+#  \
  #   && apk del --no-cache --purge .build-dependencies \
  #   && rm -fr \
  #       /tmp/* \
@@ -31,8 +31,6 @@ RUN \
  #   \
  #   && mkdir -p /var/log/nginx \
  #   && touch /var/log/nginx/error.log
-
-
  # Copy root filesystem
 COPY rootfs /
 
