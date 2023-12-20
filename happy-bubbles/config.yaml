@@ -1,6 +1,6 @@
 ---
 name: Happy Bubbles
-version: dev1111
+version: dev1111222
 slug: happy-bubbles
 description: Presence detection server for Happy Bubbles Bluetooth beacon-based presence detection system.
 url: https://github.com/hassio-addons/addon-happy-bubbles
