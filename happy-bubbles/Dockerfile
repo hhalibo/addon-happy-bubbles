@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG BUILD_ARCH=armv7
+ARG BUILD_ARCH=aarch64
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -32,7 +32,7 @@ RUN \
     && mkdir -p /var/log/nginx \
     && touch /var/log/nginx/error.log
 
-    
+
  # Copy root filesystem
 COPY rootfs /
 
