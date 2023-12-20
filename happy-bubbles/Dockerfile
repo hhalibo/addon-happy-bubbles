@@ -16,21 +16,23 @@ RUN \
     && apk add --no-cache \
         lua-resty-http=0.17.1-r0 \
         nginx-mod-http-lua=1.24.0-r14 \
-        nginx=1.24.0-r14 
-#    \
-#    && wget "https://github.com/happy-bubbles/presence/releases/download/1.8.3/presence_linux_arm.zip" \
-#    && unzip -d /opt "presence_linux_arm.zip" \
-#    && rm "presence_linux_arm.zip" 
-#  \
- #   && apk del --no-cache --purge .build-dependencies \
- #   && rm -fr \
- #       /tmp/* \
- #       /var/{cache,log}/* \
- #       /var/lib/apt/lists/* \
- #       /etc/nginx \
- #   \
- #   && mkdir -p /var/log/nginx \
- #   && touch /var/log/nginx/error.log
+        nginx=1.24.0-r14 \
+    \
+    && wget "https://github.com/happy-bubbles/presence/releases/download/1.8.3/presence_linux_arm.zip" \
+    && unzip -d /opt "presence_linux_arm.zip" \
+    && rm "presence_linux_arm.zip" \
+    \
+    && apk del --no-cache --purge .build-dependencies \
+    && rm -fr \
+        /tmp/* \
+        /var/{cache,log}/* \
+        /var/lib/apt/lists/* \
+        /etc/nginx \
+    \
+    && mkdir -p /var/log/nginx \
+    && touch /var/log/nginx/error.log
+
+    
  # Copy root filesystem
 COPY rootfs /
 
