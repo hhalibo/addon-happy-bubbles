@@ -17,12 +17,12 @@ if bashio::var.has_value "${port}"; then
     bashio::config.require.ssl
 
     if bashio::config.true 'ssl'; then
-        certfile=$(bashio::config 'certfile')
-        keyfile=$(bashio::config 'keyfile')
+#        certfile=$(bashio::config 'certfile')
+#        keyfile=$(bashio::config 'keyfile')
 echo "föörst"
-        mv /etc/nginx/servers/direct-ssl.disabled /etc/nginx/servers/direct.conf
-        sed -i "s#%%certfile%%#${certfile}#g" /etc/nginx/servers/direct.conf
-        sed -i "s#%%keyfile%%#${keyfile}#g" /etc/nginx/servers/direct.conf
+#        mv /etc/nginx/servers/direct-ssl.disabled /etc/nginx/servers/direct.conf
+#        sed -i "s#%%certfile%%#${certfile}#g" /etc/nginx/servers/direct.conf
+#        sed -i "s#%%keyfile%%#${keyfile}#g" /etc/nginx/servers/direct.conf
 
     else
     echo "secööönd"
