@@ -6,7 +6,6 @@
 # ==============================================================================
 declare port
 declare certfile
-declare grafana_user
 declare ingress_entry
 declare ingress_interface
 declare keyfile
