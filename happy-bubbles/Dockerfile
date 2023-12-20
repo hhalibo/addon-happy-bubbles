@@ -10,20 +10,20 @@ ARG BUILD_ARCH=amd64
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        unzip=6.0-r8 \
+        unzip=6.0-r14 \
         wget=1.21.4-r0 \
     \
     && apk add --no-cache \
-        lua-resty-http=0.17.1-0 \
+        lua-resty-http=0.17.1-r0 \
         nginx-mod-http-lua=1.24.0-r14 \
-        nginx=1.24.0-r6 \
+        nginx=1.24.0-r14 \
     \
     && wget "https://github.com/happy-bubbles/presence/releases/download/1.8.3/presence_linux_arm.zip" \
     && unzip -d /opt "presence_linux_arm.zip" \
     && rm "presence_linux_arm.zip" \
     \
     && apk del --no-cache --purge .build-dependencies \
-  #  && rm -fr /etc/nginx
+    && rm -fr /etc/nginx
 
  # Copy root filesystem
 COPY rootfs /
