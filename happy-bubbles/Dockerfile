@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG BUILD_ARCH=amd64
+ARG BUILD_ARCH=arm
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
