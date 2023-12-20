@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:7.2.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -29,8 +29,7 @@ RUN \
     && rm "presence_linux_${ARCH}.zip" \
     \
     && apk del --no-cache --purge .build-dependencies \
-    && rm -fr \
-        /etc/nginx
+    && rm -fr /etc/nginx
 
  # Copy root filesystem
 COPY rootfs /
