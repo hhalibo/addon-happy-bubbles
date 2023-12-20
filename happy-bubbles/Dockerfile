@@ -11,12 +11,12 @@ ARG BUILD_ARCH=amd64
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         unzip=6.0-r8 \
-        wget=1.20.3-r1 \
+        wget=1.21.4-r0 \
     \
     && apk add --no-cache \
-        lua-resty-http=0.15-r0 \
-        nginx-mod-http-lua=1.18.0-r1 \
-        nginx=1.18.0-r1 \
+        lua-resty-http=0.17.1-0 \
+        nginx-mod-http-lua=1.24.0-r14 \
+        nginx=1.24.0-r6 \
     \
     && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then ARCH="arm"; fi \
     && if [[ "${BUILD_ARCH}" = "amd64" ]]; then ARCH="386"; fi \
