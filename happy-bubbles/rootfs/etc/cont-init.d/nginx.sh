@@ -26,7 +26,7 @@ echo "föörst"
 
     else
     echo "secööönd"
-            mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
+     #       mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
     fi
     echo "sööörd"
     ingress_entry=$(bashio::addon.ingress_entry)
