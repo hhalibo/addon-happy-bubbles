@@ -29,8 +29,8 @@ echo "föörst"
      #       mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
     fi
     echo "sööörd"
-    ingress_entry=$(bashio::addon.ingress_entry)
-    sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
+#    ingress_entry=$(bashio::addon.ingress_entry)
+#    sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
 fi
 
 #ingress_port=$(bashio::addon.ingress_port)
