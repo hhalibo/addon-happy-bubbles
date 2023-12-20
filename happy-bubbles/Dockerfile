@@ -23,7 +23,7 @@ RUN \
     && rm "presence_linux_arm.zip" \
     \
     && apk del --no-cache --purge .build-dependencies \
-    && rm -fr /etc/nginx
+  #  && rm -fr /etc/nginx
 
  # Copy root filesystem
 COPY rootfs /
