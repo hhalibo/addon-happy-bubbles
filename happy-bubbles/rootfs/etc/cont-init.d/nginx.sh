@@ -25,6 +25,7 @@ if bashio::var.has_value "${port}"; then
         sed -i "s#%%keyfile%%#${keyfile}#g" /etc/nginx/servers/direct.conf
 
     else
+    echo "fuck"
         mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
     fi
     ingress_entry=$(bashio::addon.ingress_entry)
