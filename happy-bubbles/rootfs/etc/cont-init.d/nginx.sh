@@ -19,15 +19,16 @@ if bashio::var.has_value "${port}"; then
     if bashio::config.true 'ssl'; then
         certfile=$(bashio::config 'certfile')
         keyfile=$(bashio::config 'keyfile')
-
+echo "föörst"
         mv /etc/nginx/servers/direct-ssl.disabled /etc/nginx/servers/direct.conf
         sed -i "s#%%certfile%%#${certfile}#g" /etc/nginx/servers/direct.conf
         sed -i "s#%%keyfile%%#${keyfile}#g" /etc/nginx/servers/direct.conf
 
     else
-    echo "fuck"
-        mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
+    echo "secööönd"
+            mv /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
     fi
+    echo "sööörd"
     ingress_entry=$(bashio::addon.ingress_entry)
     sed -i "s#%%ingress_entry%%#${ingress_entry}#g" /etc/nginx/servers/direct.conf
 fi
