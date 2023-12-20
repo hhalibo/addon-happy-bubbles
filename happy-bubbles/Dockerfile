@@ -8,29 +8,29 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 ARG BUILD_ARCH=aarch64
 # hadolint ignore=DL3003
-RUN \
-    apk add --no-cache --virtual .build-dependencies \
-        unzip=6.0-r14 \
-        wget=1.21.4-r0 \
-    \
-    && apk add --no-cache \
-        lua-resty-http=0.17.1-r0 \
-        nginx-mod-http-lua=1.24.0-r14 \
-        nginx=1.24.0-r14 \
-    \
-    && wget "https://github.com/happy-bubbles/presence/releases/download/1.8.3/presence_linux_arm.zip" \
-    && unzip -d /opt "presence_linux_arm.zip" \
-    && rm "presence_linux_arm.zip" \
-    \
-    && apk del --no-cache --purge .build-dependencies \
-    && rm -fr \
-        /tmp/* \
-        /var/{cache,log}/* \
-        /var/lib/apt/lists/* \
-        /etc/nginx \
-    \
-    && mkdir -p /var/log/nginx \
-    && touch /var/log/nginx/error.log
+#RUN \
+#    apk add --no-cache --virtual .build-dependencies \
+#        unzip=6.0-r14 \
+#        wget=1.21.4-r0 \
+#    \
+#    && apk add --no-cache \
+#        lua-resty-http=0.17.1-r0 \
+#        nginx-mod-http-lua=1.24.0-r14 \
+#        nginx=1.24.0-r14 \
+#    \
+#    && wget "https://github.com/happy-bubbles/presence/releases/download/1.8.3/presence_linux_arm.zip" \
+#    && unzip -d /opt "presence_linux_arm.zip" \
+#    && rm "presence_linux_arm.zip" \
+#    \
+#    && apk del --no-cache --purge .build-dependencies \
+#    && rm -fr \
+#        /tmp/* \
+#        /var/{cache,log}/* \
+#        /var/lib/apt/lists/* \
+#        /etc/nginx \
+#    \
+#    && mkdir -p /var/log/nginx \
+#    && touch /var/log/nginx/error.log
 
 
  # Copy root filesystem
