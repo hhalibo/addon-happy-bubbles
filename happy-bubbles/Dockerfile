@@ -34,7 +34,7 @@ RUN \
 
 
  # Copy root filesystem
-COPY rootfs /
+#COPY rootfs /
 
 # Build arguments
 ARG BUILD_ARCH
