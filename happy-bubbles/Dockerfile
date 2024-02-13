@@ -18,9 +18,9 @@ RUN \
         nginx-mod-http-lua=1.24.0-r14 \
         nginx=1.24.0-r14 \
     \
-    && wget "https://github.com/happy-bubbles/presence/releases/download/1.8.3/presence_linux_arm.zip" \
-    && unzip -d /opt "presence_linux_arm.zip" \
-    && rm "presence_linux_arm.zip" \
+    && wget "https://github.com/happy-bubbles/presence/releases/download/1.8.3/presence_linux_arm64.zip" \
+    && unzip -d /opt "presence_linux_arm64.zip" \
+    && rm "presence_linux_arm64.zip" \
     \
     && apk del --no-cache --purge .build-dependencies \
     && rm -fr \
